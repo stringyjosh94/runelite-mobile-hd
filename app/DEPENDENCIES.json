@@ -1,0 +1,296 @@
+{
+  "runelite_version": "1.13.1",
+  "fcl_release": "1.3.3.7",
+  "fcl_source_commit": "34344b9b637839c73f2856615021f7a8ee7ba9d8",
+  "fcl_apk_sha256": "6558f13fa000e4a12581a7c21971eb67531f9c70386ce0cc6bc4dcb4fad90f7a",
+  "jre_version": "17.0.10-internal",
+  "caciocavallo_version": "1.19.1-SNAPSHOT",
+  "client_artifacts": [
+    {
+      "diffs": [
+        {
+          "from": "client-1.13.0.jar",
+          "fromHash": "42fe4b1903e6bb851258a401fdfad8f165f4c475d8879888f4323846ecace6f0",
+          "hash": "df96c69ee64908411668a603cc097953120be91c57aadd3abacc3476244628eb",
+          "name": "client-1.13.1.jar",
+          "path": "https://repo.runelite.net/diffs/client-1.13.0.jar-client-1.13.1.jar.apdiff.gz.jar",
+          "size": 12817
+        },
+        {
+          "from": "client-1.12.39.jar",
+          "fromHash": "438e3d0c13601e5bbf6e9b247b9548a46f665091f32ed20be1c07244858b0c13",
+          "hash": "61cf21a7884e699b43020c7ca8128e99086edc95bdfd7694248ccc93683235f5",
+          "name": "client-1.13.1.jar",
+          "path": "https://repo.runelite.net/diffs/client-1.12.39.jar-client-1.13.1.jar.apdiff.gz.jar",
+          "size": 89250
+        }
+      ],
+      "hash": "5abed7c968a8eb81c0c2d534e58369c875129ee2c246b03cfbe84ccd891c8dc6",
+      "name": "client-1.13.1.jar",
+      "path": "https://repo.runelite.net/net/runelite/client/1.13.1/client-1.13.1.jar",
+      "size": 5297436
+    },
+    {
+      "hash": "a334b96dba3a37bfeffda4481e86120ca933c7c983027fe23edb276c0c9199f6",
+      "name": "http-api-1.2.25.jar",
+      "path": "https://repo.runelite.net/net/runelite/arn/http-api/1.2.25/http-api-1.2.25.jar",
+      "size": 41139
+    },
+    {
+      "hash": "2570fab55515cbf881d7a4ceef49fc515490bc027057e666776a2832465aeca0",
+      "name": "okhttp-3.14.9.jar",
+      "path": "https://repo.runelite.net/com/squareup/okhttp3/okhttp/3.14.9/okhttp-3.14.9.jar",
+      "size": 430488
+    },
+    {
+      "hash": "f80ce42d2ffac47ad4c47e1d6f980d604d247ceb1a886705cf4581ab0c9fe2b8",
+      "name": "okio-1.17.2.jar",
+      "path": "https://repo.runelite.net/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar",
+      "size": 91980
+    },
+    {
+      "hash": "6409723fd13496386dfb1335a9794dc0919db6132522f2b7486d6734fc5df6e5",
+      "name": "discord-1.4.jar",
+      "path": "https://repo.runelite.net/net/runelite/discord/1.4/discord-1.4.jar",
+      "size": 681590
+    },
+    {
+      "hash": "24f9b6d77d8de814a8dacddf9c4e2227da70459375ca72cc961ae81d33eff75a",
+      "name": "rlawt-1.8.jar",
+      "path": "https://repo.runelite.net/net/runelite/rlawt/1.8/rlawt-1.8.jar",
+      "size": 237113
+    },
+    {
+      "hash": "18c4a0095d5c1da6b817592e767bb23d29dd2f560ad74df75ff3961dbde25b79",
+      "name": "slf4j-api-1.7.25.jar",
+      "path": "https://repo.runelite.net/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar",
+      "size": 41203
+    },
+    {
+      "hash": "ad745cc243805800d1ebbf5b7deba03b37c95885e6bce71335a73f7d6d0f14ee",
+      "name": "logback-classic-1.2.9.jar",
+      "path": "https://repo.runelite.net/ch/qos/logback/logback-classic/1.2.9/logback-classic-1.2.9.jar",
+      "size": 233855
+    },
+    {
+      "hash": "4a9ef7ed809b1fbc6992bf87d404087c247e7a9766e25bb84377b58ed5c9eb58",
+      "name": "logback-core-1.2.9.jar",
+      "path": "https://repo.runelite.net/ch/qos/logback/logback-core/1.2.9/logback-core-1.2.9.jar",
+      "size": 454201
+    },
+    {
+      "hash": "9f0c8d50fa4b79b6ff1502dbec8502179d6b9497cacbe17a13074001aed537ec",
+      "name": "jopt-simple-5.0.1.jar",
+      "path": "https://repo.runelite.net/net/sf/jopt-simple/jopt-simple/5.0.1/jopt-simple-5.0.1.jar",
+      "size": 78826
+    },
+    {
+      "hash": "5be9a7d05ba0ccd74708bc8018ae412255f85843c0b92302e9b9befa6ed52564",
+      "name": "guava-23.2-jre.jar",
+      "path": "https://repo.runelite.net/com/google/guava/guava/23.2-jre/guava-23.2-jre.jar",
+      "size": 2649860
+    },
+    {
+      "hash": "9264c6931c431e928dc64adc842584d5f57d17b2f3aff29221f2b3fdea673dad",
+      "name": "guice-4.1.0-no_aop.jar",
+      "path": "https://repo.runelite.net/com/google/inject/guice/4.1.0/guice-4.1.0-no_aop.jar",
+      "size": 428603
+    },
+    {
+      "hash": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
+      "name": "javax.inject-1.jar",
+      "path": "https://repo.runelite.net/javax/inject/javax.inject/1/javax.inject-1.jar",
+      "size": 2497
+    },
+    {
+      "hash": "0addec670fedcd3f113c5c8091d783280d23f75e3acb841b61a9cdb079376a08",
+      "name": "aopalliance-1.0.jar",
+      "path": "https://repo.runelite.net/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
+      "size": 4467
+    },
+    {
+      "hash": "233a0149fc365c9f6edbd683cfe266b19bdc773be98eabdaf6b3c924b48e7d81",
+      "name": "gson-2.8.5.jar",
+      "path": "https://repo.runelite.net/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar",
+      "size": 241622
+    },
+    {
+      "hash": "c518fa0427c7f6029b115541c0dbcf633fc89a65467f8472c52bb71fe18b559c",
+      "name": "flatlaf-3.2.5-rl4.jar",
+      "path": "https://repo.runelite.net/net/runelite/flatlaf/3.2.5-rl4/flatlaf-3.2.5-rl4.jar",
+      "size": 792432
+    },
+    {
+      "hash": "d4a57bbc1627da7c391308fd0fe910b83170fb66afd117236a5b111d2db1590b",
+      "name": "commons-text-1.2.jar",
+      "path": "https://repo.runelite.net/org/apache/commons/commons-text/1.2/commons-text-1.2.jar",
+      "size": 136544
+    },
+    {
+      "hash": "6e8dc31e046508d9953c96534edf0c2e0bfe6f468966b5b842b3f87e43b6a847",
+      "name": "commons-lang3-3.7.jar",
+      "path": "https://repo.runelite.net/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar",
+      "size": 499634
+    },
+    {
+      "hash": "eafcc780b445434d3c5ae7fa2fb6665de1a7560d537d2c408a8e80cd14d27161",
+      "name": "jna-5.9.0.jar",
+      "path": "https://repo.runelite.net/net/java/dev/jna/jna/5.9.0/jna-5.9.0.jar",
+      "size": 1729586
+    },
+    {
+      "hash": "1903bc6d87f3ab92023957b91f45a9c8eb3515bad030356ce977201e5141b724",
+      "name": "jna-platform-5.9.0.jar",
+      "path": "https://repo.runelite.net/net/java/dev/jna/jna-platform/5.9.0/jna-platform-5.9.0.jar",
+      "size": 1343236
+    },
+    {
+      "hash": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
+      "name": "jsr305-3.0.2.jar",
+      "path": "https://repo.runelite.net/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar",
+      "size": 19936
+    },
+    {
+      "hash": "cf678ab3fbc992f4b4654a86c03557c21904d635202b67688fcb2eca442c2d40",
+      "name": "protobuf-javalite-3.21.12.jar",
+      "path": "https://repo.runelite.net/com/google/protobuf/protobuf-javalite/3.21.12/protobuf-javalite-3.21.12.jar",
+      "size": 703181
+    },
+    {
+      "hash": "f8016606e74f3cafd63eae07b1331f903f999c9f40726c838399a144c3809217",
+      "name": "lwjgl-3.3.2.jar",
+      "path": "https://repo.runelite.net/org/lwjgl/lwjgl/3.3.2/lwjgl-3.3.2.jar",
+      "size": 786196
+    },
+    {
+      "hash": "0ebaaf92d306c946ce9d3db25496b9068b7aab782b15966be2544b6a24838038",
+      "name": "lwjgl-opengl-3.3.2.jar",
+      "path": "https://repo.runelite.net/org/lwjgl/lwjgl-opengl/3.3.2/lwjgl-opengl-3.3.2.jar",
+      "size": 928871
+    },
+    {
+      "hash": "da0392abcea5121f5edd9042012600584ac628f4a18fcf5c1bce60f3f9f6a33a",
+      "name": "lwjgl-opencl-3.3.2.jar",
+      "path": "https://repo.runelite.net/org/lwjgl/lwjgl-opencl/3.3.2/lwjgl-opencl-3.3.2.jar",
+      "size": 238152
+    },
+    {
+      "hash": "981eba4888f4cf0ec8fd74f09b9ed85728d7b2bc8c1f57194883aed64dec768a",
+      "name": "injected-client-1.13.1.jar",
+      "path": "https://repo.runelite.net/net/runelite/injected-client/1.13.1/injected-client-1.13.1.jar",
+      "size": 4242113
+    },
+    {
+      "hash": "055be110a570f9cda3eba8d70a006ff46c77a048bc67868524879211c48b330a",
+      "name": "json-20090211.jar",
+      "path": "https://repo.runelite.net/org/json/json/20090211/json-20090211.jar",
+      "size": 45944
+    },
+    {
+      "diffs": [
+        {
+          "from": "runelite-api-1.13.0-runtime.jar",
+          "fromHash": "238a8fc0538849d21129ed786402b4e86a4d3f8c61eba572dcbd8e57878e5fcf",
+          "hash": "c1e96f0aa42d431dbb8f29caa14c265739f2bdf08a3016fa7e45fcb7f2fe92ac",
+          "name": "runelite-api-1.13.1-runtime.jar",
+          "path": "https://repo.runelite.net/diffs/runelite-api-1.13.0-runtime.jar-runelite-api-1.13.1-runtime.jar.apdiff.gz.jar",
+          "size": 437
+        },
+        {
+          "from": "runelite-api-1.12.39-runtime.jar",
+          "fromHash": "c3b5a7a6ae077ec397ad0aeaea99e0f623b225d9d1b95ea1fe3d7e361dd471da",
+          "hash": "3b7487f4f98a06aa4cd596479e68edf9cfafb20dc1c02fe84e1f24dbf467a3d1",
+          "name": "runelite-api-1.13.1-runtime.jar",
+          "path": "https://repo.runelite.net/diffs/runelite-api-1.12.39-runtime.jar-runelite-api-1.13.1-runtime.jar.apdiff.gz.jar",
+          "size": 3448
+        }
+      ],
+      "hash": "6730af0ff0da4976e1d794a834e83e0bf1018cb230f0ea6f979d35257ab1847c",
+      "name": "runelite-api-1.13.1-runtime.jar",
+      "path": "https://repo.runelite.net/net/runelite/runelite-api/1.13.1/runelite-api-1.13.1-runtime.jar",
+      "size": 273175
+    }
+  ],
+  "embedded_gpu": {
+    "backend": "Current launcher: native Android EGL/GLES 3.2 with isolated 117HD fork and Direct Surface/copy fallback. Mesa/Zink libraries are retained dependencies, not selectable launcher profiles.",
+    "native_source": "FCL release 1.3.3.7 APK",
+    "jna_source": "https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/5.9.0/jna-5.9.0.aar",
+    "lwjgl_java_version": "3.3.3",
+    "artifacts": [
+      {
+        "file": "lib/arm64-v8a/libOSMesa_8.so",
+        "sha256": "08710cd5f1aa8763b1106143b647162c6b73fa38d04663147d63aa48f9341d81"
+      },
+      {
+        "file": "lib/arm64-v8a/liblwjgl.so",
+        "sha256": "70e8642abcd11a368c0b4cbbeae31e33f2e031553ba3a05f9375fc6b92c8a40f"
+      },
+      {
+        "file": "lib/arm64-v8a/liblwjgl_opengl.so",
+        "sha256": "c3b456be14c1dfd3969106c1a6e069ea2381b3044604962c97e9531086a6eb00"
+      },
+      {
+        "file": "lib/arm64-v8a/libjnidispatch.so",
+        "sha256": "e70a960bf0304ce6ba0b83371ff1902ef270bb74c5bd4610019aeaee6c6e45b2"
+      },
+      {
+        "file": "lib/arm64-v8a/librlawt_android.so",
+        "sha256": "94225fb757261950be7ed9f0ed9420283bdea9a6266f5077bab8e20e8fc4a61f"
+      },
+      {
+        "file": "assets/client/lwjgl-3.3.3.jar",
+        "sha256": "cf970c978f7d8937e388949811159d0d909c7ee354cc68265bd87859c8f5f258"
+      },
+      {
+        "file": "assets/client/lwjgl-opengl-3.3.3.jar",
+        "sha256": "1fb4319f3495b74dd724e6f28f17c7ed8e0895c57e2e4043d3a0617bfd255a18"
+      },
+      {
+        "file": "assets/client/lwjgl-opencl-3.3.3.jar",
+        "sha256": "10ea1ac52e0cae7a7571e7bed81f57909f5ac50b449aa0f2494c49562e187c5e"
+      },
+      {
+        "file": "lib/arm64-v8a/liblwjgl_opengles.so",
+        "sha256": "8bb9f1eef6f6823c3421b0030fd1d074821c2fa229e1658cc12febc9955eb814"
+      },
+      {
+        "file": "lib/arm64-v8a/librlhd_shader.so",
+        "sha256": "65e48367dc898b6b812103718db91b6ea16ca47f2d60920526d6a41e6599bccc"
+      },
+      {
+        "file": "lib/arm64-v8a/libpojavexec_awt.so",
+        "sha256": "616fbeb504f410616d7dae9e48e39b929dfdbec6030356777fca6aeea4e211a7"
+      },
+      {
+        "file": "assets/client/lwjgl-opengles-3.3.3.jar",
+        "sha256": "a9f291d329d8bb7206985230b850efde516492c43b3871a6d28b82c0b7810d3e"
+      },
+      {
+        "file": "assets/client/117hd-gles-port.jar",
+        "sha256": "76e635957ef67ddd410aaa875902d152bc47115e81020cc804d188a9d5f4a2bf"
+      },
+      {
+        "file": "assets/client/android-host.jar",
+        "sha256": "d00bd8f01a3cccec15e0b7a546bd0cbf101a663cac44ece4adc900ce2767ad39"
+      }
+    ],
+    "overrides": [
+      "LWJGL 3.3.2 Java artifacts in the official bootstrap are replaced with 3.3.3 to match Android native binaries. Original client artifact metadata is retained as provenance."
+    ],
+    "lwjgl_java_source": "FCL 1.3.3.7: lwjgl.jar and the org/lwjgl/opengl classes of lwjgl-3.3.3-merged-modules.jar; same payload as Android natives",
+    "lwjgl_platform_adaptation": "org/lwjgl/system/Library.class constant pojavexec replaced with rlawt_android by scripts/adapt_lwjgl.py; OSMesa renderer name provided explicitly",
+    "gles_port": {
+      "upstream": "https://github.com/117HD/RLHD",
+      "commit": "6430e99d76bd4d59993591e98bd65211a4b6986c",
+      "glslang": "15.1.0",
+      "spirv_cross": "vulkan-sdk-1.3.290.0",
+      "lwjgl_opengles": "3.3.3",
+      "runtime": "Native Android EGL/GLES, no Linux runtime"
+    }
+  },
+  "provenance_notes": [
+    "Original RuneLite bootstrap metadata is retained as download provenance; the runtime manifest identifies the actual dependency snapshot.",
+    "Project-specific HD, host bridge and native presentation outputs are compiled from source; their recorded artifact hashes describe the local v35 build, not an upstream binary.",
+    "FCL binary provenance and licence notices are recorded, but exact matching corresponding-source completeness for every bundled runtime binary has not been audited."
+  ]
+}

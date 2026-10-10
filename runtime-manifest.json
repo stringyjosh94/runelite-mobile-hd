@@ -1,0 +1,1142 @@
+{
+  "version": 35,
+  "description": "Pinned build dependencies for v35; generated bridge/HD outputs are rebuilt from source. No credentials or signing keys.",
+  "files": {
+    "app/assets/bootstrap.json": {
+      "size": 19985,
+      "sha256": "9df649c6722ec38a75ee2b5e5c6f2519016860322db09b5983a7962c4b9dc435"
+    },
+    "app/assets/cacio/cacio-agent.jar": {
+      "size": 5480,
+      "sha256": "f3251054e9da6f999c9174ce095b28222bb12fbdcb4575194d460d97e96a15f7"
+    },
+    "app/assets/cacio/cacio-shared-1.19.1-SNAPSHOT.jar": {
+      "size": 106230,
+      "sha256": "ed91fb172c92e19a9f12be73f3d8127223a7139b06278ddacfcae2b410b35b9a"
+    },
+    "app/assets/cacio/cacio-tta-1.19.1-SNAPSHOT.jar": {
+      "size": 52825,
+      "sha256": "d81c524fca7656748d406c5a478039b10513ac5a666ff4759b2a9238a984a16d"
+    },
+    "app/assets/client/aopalliance-1.0.jar": {
+      "size": 4467,
+      "sha256": "0addec670fedcd3f113c5c8091d783280d23f75e3acb841b61a9cdb079376a08"
+    },
+    "app/assets/client/client-1.13.1.jar": {
+      "size": 5297436,
+      "sha256": "5abed7c968a8eb81c0c2d534e58369c875129ee2c246b03cfbe84ccd891c8dc6"
+    },
+    "app/assets/client/commons-lang3-3.7.jar": {
+      "size": 499634,
+      "sha256": "6e8dc31e046508d9953c96534edf0c2e0bfe6f468966b5b842b3f87e43b6a847"
+    },
+    "app/assets/client/commons-text-1.2.jar": {
+      "size": 136544,
+      "sha256": "d4a57bbc1627da7c391308fd0fe910b83170fb66afd117236a5b111d2db1590b"
+    },
+    "app/assets/client/discord-1.4.jar": {
+      "size": 681590,
+      "sha256": "6409723fd13496386dfb1335a9794dc0919db6132522f2b7486d6734fc5df6e5"
+    },
+    "app/assets/client/flatlaf-3.2.5-rl4.jar": {
+      "size": 792432,
+      "sha256": "c518fa0427c7f6029b115541c0dbcf633fc89a65467f8472c52bb71fe18b559c"
+    },
+    "app/assets/client/gson-2.8.5.jar": {
+      "size": 241622,
+      "sha256": "233a0149fc365c9f6edbd683cfe266b19bdc773be98eabdaf6b3c924b48e7d81"
+    },
+    "app/assets/client/guava-23.2-jre.jar": {
+      "size": 2649860,
+      "sha256": "5be9a7d05ba0ccd74708bc8018ae412255f85843c0b92302e9b9befa6ed52564"
+    },
+    "app/assets/client/guice-4.1.0-no_aop.jar": {
+      "size": 428603,
+      "sha256": "9264c6931c431e928dc64adc842584d5f57d17b2f3aff29221f2b3fdea673dad"
+    },
+    "app/assets/client/http-api-1.2.25.jar": {
+      "size": 41139,
+      "sha256": "a334b96dba3a37bfeffda4481e86120ca933c7c983027fe23edb276c0c9199f6"
+    },
+    "app/assets/client/injected-client-1.13.1.jar": {
+      "size": 4242113,
+      "sha256": "981eba4888f4cf0ec8fd74f09b9ed85728d7b2bc8c1f57194883aed64dec768a"
+    },
+    "app/assets/client/javax.inject-1.jar": {
+      "size": 2497,
+      "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff"
+    },
+    "app/assets/client/jna-5.9.0.jar": {
+      "size": 1729586,
+      "sha256": "eafcc780b445434d3c5ae7fa2fb6665de1a7560d537d2c408a8e80cd14d27161"
+    },
+    "app/assets/client/jna-platform-5.9.0.jar": {
+      "size": 1343236,
+      "sha256": "1903bc6d87f3ab92023957b91f45a9c8eb3515bad030356ce977201e5141b724"
+    },
+    "app/assets/client/jopt-simple-5.0.1.jar": {
+      "size": 78826,
+      "sha256": "9f0c8d50fa4b79b6ff1502dbec8502179d6b9497cacbe17a13074001aed537ec"
+    },
+    "app/assets/client/json-20090211.jar": {
+      "size": 45944,
+      "sha256": "055be110a570f9cda3eba8d70a006ff46c77a048bc67868524879211c48b330a"
+    },
+    "app/assets/client/jsr305-3.0.2.jar": {
+      "size": 19936,
+      "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7"
+    },
+    "app/assets/client/logback-classic-1.2.9.jar": {
+      "size": 233855,
+      "sha256": "ad745cc243805800d1ebbf5b7deba03b37c95885e6bce71335a73f7d6d0f14ee"
+    },
+    "app/assets/client/logback-core-1.2.9.jar": {
+      "size": 454201,
+      "sha256": "4a9ef7ed809b1fbc6992bf87d404087c247e7a9766e25bb84377b58ed5c9eb58"
+    },
+    "app/assets/client/lwjgl-3.3.3.jar": {
+      "size": 794216,
+      "sha256": "cf970c978f7d8937e388949811159d0d909c7ee354cc68265bd87859c8f5f258"
+    },
+    "app/assets/client/lwjgl-opencl-3.3.3.jar": {
+      "size": 242112,
+      "sha256": "10ea1ac52e0cae7a7571e7bed81f57909f5ac50b449aa0f2494c49562e187c5e"
+    },
+    "app/assets/client/lwjgl-opengl-3.3.3.jar": {
+      "size": 947057,
+      "sha256": "1fb4319f3495b74dd724e6f28f17c7ed8e0895c57e2e4043d3a0617bfd255a18"
+    },
+    "app/assets/client/lwjgl-opengles-3.3.3.jar": {
+      "size": 369765,
+      "sha256": "a9f291d329d8bb7206985230b850efde516492c43b3871a6d28b82c0b7810d3e"
+    },
+    "app/assets/client/okhttp-3.14.9.jar": {
+      "size": 430488,
+      "sha256": "2570fab55515cbf881d7a4ceef49fc515490bc027057e666776a2832465aeca0"
+    },
+    "app/assets/client/okio-1.17.2.jar": {
+      "size": 91980,
+      "sha256": "f80ce42d2ffac47ad4c47e1d6f980d604d247ceb1a886705cf4581ab0c9fe2b8"
+    },
+    "app/assets/client/protobuf-javalite-3.21.12.jar": {
+      "size": 703181,
+      "sha256": "cf678ab3fbc992f4b4654a86c03557c21904d635202b67688fcb2eca442c2d40"
+    },
+    "app/assets/client/rlawt-1.8.jar": {
+      "size": 237113,
+      "sha256": "24f9b6d77d8de814a8dacddf9c4e2227da70459375ca72cc961ae81d33eff75a"
+    },
+    "app/assets/client/runelite-api-1.13.1-runtime.jar": {
+      "size": 273175,
+      "sha256": "6730af0ff0da4976e1d794a834e83e0bf1018cb230f0ea6f979d35257ab1847c"
+    },
+    "app/assets/client/slf4j-api-1.7.25.jar": {
+      "size": 41203,
+      "sha256": "18c4a0095d5c1da6b817592e767bb23d29dd2f560ad74df75ff3961dbde25b79"
+    },
+    "app/assets/jre/conf/logging.properties": {
+      "size": 2732,
+      "sha256": "b62d2733ab99556b108a1951d894c5a8d76b1ac7a00c02c388f9eb9be046c56f"
+    },
+    "app/assets/jre/conf/management/jmxremote.access": {
+      "size": 3997,
+      "sha256": "0c25d26ee212ca1e8c33f67c3c460d43fe849c3a1d23dbe341148517602b280c"
+    },
+    "app/assets/jre/conf/management/jmxremote.password.template": {
+      "size": 5690,
+      "sha256": "0273b6a6b9e20e6ce54c5aee70164028e0395063b2b7d39060a40b6495543dbf"
+    },
+    "app/assets/jre/conf/management/management.properties": {
+      "size": 14410,
+      "sha256": "f80096ec028dcb71625c398ec16d12023cafc6a1c055aceaed07d02e8d56f637"
+    },
+    "app/assets/jre/conf/net.properties": {
+      "size": 6608,
+      "sha256": "a88eeb56c61c0df79c8d000a43de10dba48c77130c8ada1af942c9a8ce29a787"
+    },
+    "app/assets/jre/conf/sdp/sdp.conf.template": {
+      "size": 1455,
+      "sha256": "e9441e51f0d29e25313d33a9005640f11ad93c27f01bc46a34bf02f2a98ffd6b"
+    },
+    "app/assets/jre/conf/security/java.policy": {
+      "size": 2180,
+      "sha256": "f2a00a1dec3b7a097f0815f338a84717ba1017d5d7aae96d842d2188d67c3250"
+    },
+    "app/assets/jre/conf/security/java.security": {
+      "size": 57221,
+      "sha256": "bc6d2160aa078a3a6389d11fd9473392b1195735c976ccad97fd06dc7ff90954"
+    },
+    "app/assets/jre/conf/security/policy/README.txt": {
+      "size": 2390,
+      "sha256": "6da0747334b0fea7592fd92614b2bbc8b126535e129b1fee483774d914e98eb5"
+    },
+    "app/assets/jre/conf/security/policy/limited/default_US_export.policy": {
+      "size": 146,
+      "sha256": "758b930a526fc670ab7537f8c26321527050a31f5f42149a2dda623c56a0a1a9"
+    },
+    "app/assets/jre/conf/security/policy/limited/default_local.policy": {
+      "size": 647,
+      "sha256": "2b2627548e61316150d47ffc3e6cad465ca05b3cccd4785eb7d21aa7baa0f441"
+    },
+    "app/assets/jre/conf/security/policy/limited/exempt_local.policy": {
+      "size": 566,
+      "sha256": "8c3d7648abcd95a272ce12db870082937f4d7f6878d730d83cb7fbb31eb8b2c9"
+    },
+    "app/assets/jre/conf/security/policy/unlimited/default_US_export.policy": {
+      "size": 146,
+      "sha256": "758b930a526fc670ab7537f8c26321527050a31f5f42149a2dda623c56a0a1a9"
+    },
+    "app/assets/jre/conf/security/policy/unlimited/default_local.policy": {
+      "size": 193,
+      "sha256": "8d8a318e6d90dfd7e26612d2b6385aa704f686ca6134c551f8928418d92b851a"
+    },
+    "app/assets/jre/conf/sound.properties": {
+      "size": 1210,
+      "sha256": "299c2360b6155eb28990ec49cd21753f97e43442fe8fab03e04f3e213df43a66"
+    },
+    "app/assets/jre/legal/java.base/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.base/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.base/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.base/aes.md": {
+      "size": 1444,
+      "sha256": "45c6d4da48325edfbff3dcf71c704e504c057904435ed23c6d57046d551eb69d"
+    },
+    "app/assets/jre/legal/java.base/asm.md": {
+      "size": 1584,
+      "sha256": "1ff912740e84e024711def5fa482ffbb46eff64559760c467352dfa7c39a3307"
+    },
+    "app/assets/jre/legal/java.base/c-libutl.md": {
+      "size": 1556,
+      "sha256": "bef40679922d6fdfb7e4ddb223ad6722300f6054ba737bbf6188d60fcec517f9"
+    },
+    "app/assets/jre/legal/java.base/cldr.md": {
+      "size": 9130,
+      "sha256": "f2bd33ded550a05d59e8f659416ef382490504548d846e6388b1dffd273aa077"
+    },
+    "app/assets/jre/legal/java.base/icu.md": {
+      "size": 11086,
+      "sha256": "af0057e8553906083f69c2fb9fe9ed4ae8bc2340a0b1e376a424702f00300b29"
+    },
+    "app/assets/jre/legal/java.base/public_suffix.md": {
+      "size": 17785,
+      "sha256": "c4f57e47b7300acba8743f0b57100f91570206af8993945bef035a6d29ccc8cf"
+    },
+    "app/assets/jre/legal/java.base/unicode.md": {
+      "size": 2384,
+      "sha256": "5e4e6623a21a63f9bc16ea54af4133b8038e490c0d499a74676f9e5a61b9c5b2"
+    },
+    "app/assets/jre/legal/java.compiler/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.compiler/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.compiler/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.datatransfer/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.datatransfer/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.datatransfer/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.desktop/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.desktop/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.desktop/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.desktop/colorimaging.md": {
+      "size": 167,
+      "sha256": "04d61e3e8e71dd452ebe52008af5378d9f6640d14578aeb515dc5375973b0189"
+    },
+    "app/assets/jre/legal/java.desktop/giflib.md": {
+      "size": 1288,
+      "sha256": "c8b99f33890887d27ad56fba9edd8ebbc668cfe0689168505a95613d1d4b32f8"
+    },
+    "app/assets/jre/legal/java.desktop/harfbuzz.md": {
+      "size": 3314,
+      "sha256": "a73cc87c16567c41180d2045d7e0076d41e07ff5dc27aa95fbc3721af5bc73b8"
+    },
+    "app/assets/jre/legal/java.desktop/jpeg.md": {
+      "size": 3475,
+      "sha256": "580be596216ee11e2554b24ce944973acaede2ebf5ffba34a6bd8cc441c05043"
+    },
+    "app/assets/jre/legal/java.desktop/lcms.md": {
+      "size": 2630,
+      "sha256": "8acf00b5efd25c1c055927222fd3c26b0c9fd02ed02e478c225b64e7a24d9782"
+    },
+    "app/assets/jre/legal/java.desktop/libpng.md": {
+      "size": 6941,
+      "sha256": "9c69c70e1e8443d35e4ea506e0d8dce0e67d4985859d35b0807566c8d6e7681e"
+    },
+    "app/assets/jre/legal/java.desktop/mesa3d.md": {
+      "size": 5732,
+      "sha256": "63f4e6f75caebbccb95d903fb43e46ac7111b3624d0a34f146b276d7d9e7b152"
+    },
+    "app/assets/jre/legal/java.desktop/xwd.md": {
+      "size": 1348,
+      "sha256": "1d4ffa93c87f35084b02a7aa90a21084b4019db4fe1003c2e5ce775b4a384f59"
+    },
+    "app/assets/jre/legal/java.instrument/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.instrument/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.instrument/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.logging/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.logging/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.logging/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.management/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.management/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.management/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.management.rmi/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.management.rmi/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.management.rmi/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.naming/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.naming/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.naming/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.net.http/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.net.http/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.net.http/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.prefs/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.prefs/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.prefs/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.rmi/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.rmi/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.rmi/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.scripting/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.scripting/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.scripting/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.se/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.se/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.se/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.security.jgss/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.security.jgss/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.security.jgss/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.security.sasl/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.security.sasl/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.security.sasl/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.sql/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.sql/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.sql/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.sql.rowset/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.sql.rowset/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.sql.rowset/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.transaction.xa/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.transaction.xa/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.transaction.xa/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.xml/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.xml/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.xml/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.xml/bcel.md": {
+      "size": 11195,
+      "sha256": "853a1e7ce397bb10de0e2b3bde0844bcc651f17d983decd07d2d003c0304c311"
+    },
+    "app/assets/jre/legal/java.xml/dom.md": {
+      "size": 3761,
+      "sha256": "6686e8877667584a3a7c07344baadca1a03e29f677162d87c3c0811e990d1148"
+    },
+    "app/assets/jre/legal/java.xml/jcup.md": {
+      "size": 1448,
+      "sha256": "8d5dcfdf50455a3c34c753a98f21e953248af200415a9084e3f102cb6c43b8bf"
+    },
+    "app/assets/jre/legal/java.xml/xalan.md": {
+      "size": 13494,
+      "sha256": "ea67226be5cfe19c7e79725c2c24a16676323264d69f9747c528de0b44541b03"
+    },
+    "app/assets/jre/legal/java.xml/xerces.md": {
+      "size": 11852,
+      "sha256": "472224f99de833f4f4c19f2f8a0317f22114e1c641f5d77ffa3a4280a1b80176"
+    },
+    "app/assets/jre/legal/java.xml.crypto/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/java.xml.crypto/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/java.xml.crypto/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/java.xml.crypto/santuario.md": {
+      "size": 11436,
+      "sha256": "6c05574d99b0d7e38c6217db5718e7ba2ee7f710f23a5f8228e502dcffe43e7a"
+    },
+    "app/assets/jre/legal/jdk.accessibility/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.accessibility/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.accessibility/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.charsets/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.charsets/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.charsets/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.crypto.cryptoki/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.crypto.cryptoki/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.crypto.cryptoki/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.crypto.cryptoki/pkcs11cryptotoken.md": {
+      "size": 3923,
+      "sha256": "262802e081760b38b3748c8b194353d340e39bc936ac22e17abbb7158d895811"
+    },
+    "app/assets/jre/legal/jdk.crypto.cryptoki/pkcs11wrapper.md": {
+      "size": 2131,
+      "sha256": "371974b1fca3744a3892c7ee1fcc593b8b4281fc218f4cafd2f709e9df5fd81d"
+    },
+    "app/assets/jre/legal/jdk.crypto.ec/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.crypto.ec/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.crypto.ec/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.dynalink/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.dynalink/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.dynalink/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.dynalink/dynalink.md": {
+      "size": 1502,
+      "sha256": "17312591cabee3ef6c34ed8897d92e4e361ba9cea41ec00dcd61a322a8fc2cdb"
+    },
+    "app/assets/jre/legal/jdk.httpserver/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.httpserver/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.httpserver/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.internal.vm.ci/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.internal.vm.ci/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.internal.vm.ci/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.jdwp.agent/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.jdwp.agent/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.jdwp.agent/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.jfr/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.jfr/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.jfr/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.jsobject/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.jsobject/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.jsobject/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.localedata/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.localedata/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.localedata/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.localedata/cldr.md": {
+      "size": 9130,
+      "sha256": "f2bd33ded550a05d59e8f659416ef382490504548d846e6388b1dffd273aa077"
+    },
+    "app/assets/jre/legal/jdk.localedata/thaidict.md": {
+      "size": 1346,
+      "sha256": "c326144a2351c9608fa708b5d7d3c5a3da03e82b66479b128e9db4969539824a"
+    },
+    "app/assets/jre/legal/jdk.management/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.management/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.management/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.management.agent/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.management.agent/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.management.agent/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.management.jfr/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.management.jfr/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.management.jfr/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.naming.dns/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.naming.dns/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.naming.dns/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.naming.rmi/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.naming.rmi/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.naming.rmi/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.net/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.net/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.net/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.nio.mapmode/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.nio.mapmode/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.nio.mapmode/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.sctp/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.sctp/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.sctp/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.security.auth/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.security.auth/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.security.auth/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.security.jgss/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.security.jgss/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.security.jgss/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.unsupported/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.unsupported/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.unsupported/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.xml.dom/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.xml.dom/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.xml.dom/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/legal/jdk.zipfs/ADDITIONAL_LICENSE_INFO": {
+      "size": 2114,
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    "app/assets/jre/legal/jdk.zipfs/ASSEMBLY_EXCEPTION": {
+      "size": 1522,
+      "sha256": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb"
+    },
+    "app/assets/jre/legal/jdk.zipfs/LICENSE": {
+      "size": 19274,
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    "app/assets/jre/lib/classlist": {
+      "size": 71443,
+      "sha256": "10f30c7bb9e9c782b5507084712b1e09822cce370059437a8d6fe4169d9dc667"
+    },
+    "app/assets/jre/lib/fontconfig.properties": {
+      "size": 35,
+      "sha256": "28ae45ffc618d5ece35ae5b442d1f1923ac85c03bb7a144950a84367411c26d6"
+    },
+    "app/assets/jre/lib/fonts/NotoSans-Regular.ttf": {
+      "size": 621572,
+      "sha256": "478c558ea716033cd60c03438f628dfa75694dcf6b5f6d505a2f05fd2b4f3823"
+    },
+    "app/assets/jre/lib/jfr/default.jfc": {
+      "size": 36014,
+      "sha256": "4b57387abe8b51dfae91b392274de6f8f03e41ff8501240293404c2a5b1c4995"
+    },
+    "app/assets/jre/lib/jfr/profile.jfc": {
+      "size": 35974,
+      "sha256": "509d1403d6bbd78afea4af8d1890aef5f391212d2ecc6c2d0d15311fb6717656"
+    },
+    "app/assets/jre/lib/jrt-fs.jar": {
+      "size": 110518,
+      "sha256": "2c30d3b2e0483cbf916c27ea4d76b9e98527d03a06f7b212da507c12815a3c6f"
+    },
+    "app/assets/jre/lib/jvm.cfg": {
+      "size": 29,
+      "sha256": "aa9efb969444c1484e29adecab55a122458090616e766b2f1230ef05bc3867e0"
+    },
+    "app/assets/jre/lib/modules": {
+      "size": 81720691,
+      "sha256": "2cd3abc75196790da2ad94fffbf93c43b70415d8172a824e96619b401c408139"
+    },
+    "app/assets/jre/lib/psfont.properties.ja": {
+      "size": 3793,
+      "sha256": "5a4bd51b969bf187ff86d94f4a71fdfbfa602762975fa3c73d264b4575f7c78f"
+    },
+    "app/assets/jre/lib/psfontj2d.properties": {
+      "size": 11390,
+      "sha256": "780c565d5af3ee6f68b887b75c041cdf46a0592f67012f12eeb691283e92630a"
+    },
+    "app/assets/jre/lib/security/blocked.certs": {
+      "size": 2488,
+      "sha256": "96572f243f31c2ef81a6e627542e596f6a9295cff3c7ae095c1b595cb1457ded"
+    },
+    "app/assets/jre/lib/security/cacerts": {
+      "size": 120640,
+      "sha256": "615f6dc59ca38a653fcbf9f5260423f453a68cb38b2b0af0667d9e67b94dacb7"
+    },
+    "app/assets/jre/lib/security/default.policy": {
+      "size": 10012,
+      "sha256": "a9844ff513cce6041c571a7e914c160facad086ca29c71cd8bd49357b80d5db5"
+    },
+    "app/assets/jre/lib/security/public_suffix_list.dat": {
+      "size": 229405,
+      "sha256": "00ca9e095528e79cdcffcf6fec30c4c8c1fe45edf168e715cc89ab39b5c487b4"
+    },
+    "app/assets/jre/lib/tzdb.dat": {
+      "size": 103785,
+      "sha256": "b7dba25abdfee317daa042c89b01e5711f5781d020dd733ba411760b72addb93"
+    },
+    "app/assets/jre/native-layout.json": {
+      "size": 1259,
+      "sha256": "38ecc7dc550a54e50e3cb7d05ea5343a94233e05d0515d72d2a2322c9e312ce8"
+    },
+    "app/assets/jre/release": {
+      "size": 875,
+      "sha256": "0cb2e04ae7c41cbbc3a7945bb5fcb5a9a15ee73f1ad2b2ebe4d9f9719a100d3e"
+    },
+    "app/assets/jvm-options.json": {
+      "size": 1443,
+      "sha256": "07f016a53a4a13de175fecab0e47e36e2c18bf7f120cd5d152870a12d6c38a14"
+    },
+    "app/lib/arm64-v8a/libOSMesa_8.so": {
+      "size": 13742616,
+      "sha256": "08710cd5f1aa8763b1106143b647162c6b73fa38d04663147d63aa48f9341d81"
+    },
+    "app/lib/arm64-v8a/libawt.so": {
+      "size": 625712,
+      "sha256": "4dd3467485f86541c3b6fa6a0af5a854b5f4fdf65cf4101443d74ffb63b275d0"
+    },
+    "app/lib/arm64-v8a/libawt_headless.so": {
+      "size": 26240,
+      "sha256": "a394cd904bd50c3198fa613199c75d6a24e32a54cf4296cb6a6aad184cd0b219"
+    },
+    "app/lib/arm64-v8a/libdt_socket.so": {
+      "size": 22160,
+      "sha256": "02a9fb25dd974958b30075600369eab2705637f811e239884c0354eab1306533"
+    },
+    "app/lib/arm64-v8a/libextnet.so": {
+      "size": 9704,
+      "sha256": "d514f5bd7bc03b6de3a01c69b703ed9b55e23178da5257c8c91a745940b3bf8f"
+    },
+    "app/lib/arm64-v8a/libfontmanager.so": {
+      "size": 1913336,
+      "sha256": "7c73941be68ee3a5505c4ed247595198ba36af34b1dd686ed595a425f4e2431d"
+    },
+    "app/lib/arm64-v8a/libfreetype.so": {
+      "size": 644480,
+      "sha256": "e18b0a4b38e261112d04e49c34a70f17e813a52c92a11d223d3fc705bbbcaecc"
+    },
+    "app/lib/arm64-v8a/libinstrument.so": {
+      "size": 42784,
+      "sha256": "458a7c620198eb342b48451a24089e1b76019b33fdc134776055c6b63f9acd63"
+    },
+    "app/lib/arm64-v8a/libj2gss.so": {
+      "size": 38448,
+      "sha256": "38e5b2d2e50b9dda3686510a1b9c014ea64c1c7ab7ab210713db635fdcb5a0e0"
+    },
+    "app/lib/arm64-v8a/libj2pkcs11.so": {
+      "size": 71216,
+      "sha256": "30c1327a80111fe8145bdf35684a7decf407490f34c26731db4e3c53b7bb7624"
+    },
+    "app/lib/arm64-v8a/libjaas.so": {
+      "size": 5608,
+      "sha256": "a0c28a9edcabf5d0f2ffd1cfae03b41e7bd43b4298d8836421952a4bf7bbdb2c"
+    },
+    "app/lib/arm64-v8a/libjava.so": {
+      "size": 146120,
+      "sha256": "c10c0802435ff77556067454b34d6ac1a1e66489e710dc705710855bdf2fb9b5"
+    },
+    "app/lib/arm64-v8a/libjavajpeg.so": {
+      "size": 181808,
+      "sha256": "1b4b420d0a3f492cd281353467e34b80903e338ee92ffffc291226a3c900bf59"
+    },
+    "app/lib/arm64-v8a/libjawt.so": {
+      "size": 5536,
+      "sha256": "4b8f97c673bc26829913efe8e6fa9cc3ac2346a34d8d38c3292ab84c828dca92"
+    },
+    "app/lib/arm64-v8a/libjdwp.so": {
+      "size": 220840,
+      "sha256": "5c68c6cfa3797f065a07bb9c3c8498aa3c25b95c0d9098f456c655cdaf86b2b1"
+    },
+    "app/lib/arm64-v8a/libjimage.so": {
+      "size": 190480,
+      "sha256": "42e9994e0b13275b9c0c2c4f0dbf479fee8357673d25b98addc4d10798d27565"
+    },
+    "app/lib/arm64-v8a/libjli.so": {
+      "size": 50824,
+      "sha256": "7f5fa6832e29dfcbc17259aea3251c8621dc57d82dcddf2392e5d28dae6c8788"
+    },
+    "app/lib/arm64-v8a/libjnidispatch.so": {
+      "size": 102136,
+      "sha256": "e70a960bf0304ce6ba0b83371ff1902ef270bb74c5bd4610019aeaee6c6e45b2"
+    },
+    "app/lib/arm64-v8a/libjsig.so": {
+      "size": 9776,
+      "sha256": "08d869f237b80418f3b3810b640e60d0403a9b8ac99d76606650289ceef2d105"
+    },
+    "app/lib/arm64-v8a/libjvm.so": {
+      "size": 15295472,
+      "sha256": "d8f6a38fe47932fb327d5704c1923885ae2acc79b79981619aaf8544bd347ca5"
+    },
+    "app/lib/arm64-v8a/liblcms.so": {
+      "size": 311560,
+      "sha256": "8650c294a5f777fd9b32a665038695b181b2ea7b0afb6a4f9fd93f36646e3c72"
+    },
+    "app/lib/arm64-v8a/liblwjgl.so": {
+      "size": 511504,
+      "sha256": "70e8642abcd11a368c0b4cbbeae31e33f2e031553ba3a05f9375fc6b92c8a40f"
+    },
+    "app/lib/arm64-v8a/liblwjgl_opengl.so": {
+      "size": 351424,
+      "sha256": "c3b456be14c1dfd3969106c1a6e069ea2381b3044604962c97e9531086a6eb00"
+    },
+    "app/lib/arm64-v8a/libmanagement.so": {
+      "size": 17968,
+      "sha256": "cd6a53eab2f3da08b96ed780953337a78d8dc3dffc5da356655f095e4709d3ff"
+    },
+    "app/lib/arm64-v8a/libmanagement_agent.so": {
+      "size": 5624,
+      "sha256": "9683b4b30e51d378b8f84b229b4e684024870cdf4aaae44a8d2d9ac7427a2edf"
+    },
+    "app/lib/arm64-v8a/libmanagement_ext.so": {
+      "size": 26168,
+      "sha256": "9f8def80860b1da60b9c94449f31b03a86f1c2977763c1b34aad37ba8a56f606"
+    },
+    "app/lib/arm64-v8a/libmlib_image.so": {
+      "size": 378352,
+      "sha256": "1628de71925ae2c3a59d7b60a12125ad81ce860624d83fbbc17c76ad20cd22eb"
+    },
+    "app/lib/arm64-v8a/libnet.so": {
+      "size": 79560,
+      "sha256": "543726500a75877470986e90337812538b2a97c2ce239230e249e7b9d7519bae"
+    },
+    "app/lib/arm64-v8a/libnio.so": {
+      "size": 71288,
+      "sha256": "4d9c2555e8df7922db1dc5acdb8fd38942552a05ecdebe512d3d84c9961bb2be"
+    },
+    "app/lib/arm64-v8a/libprefs.so": {
+      "size": 5536,
+      "sha256": "e877a11be088052a2109ffe1625f82ee1fb07128eda5fbe385a4c59563c6f7b4"
+    },
+    "app/lib/arm64-v8a/librlhd_shader.so": {
+      "size": 3560048,
+      "sha256": "65e48367dc898b6b812103718db91b6ea16ca47f2d60920526d6a41e6599bccc"
+    },
+    "app/lib/arm64-v8a/librmi.so": {
+      "size": 5536,
+      "sha256": "6b10f5291331909b14529b44f2325610dbc854b701d5e091fe356b159eca47f2"
+    },
+    "app/lib/arm64-v8a/libsctp.so": {
+      "size": 22136,
+      "sha256": "6bb824addcd575ccf45052d7d888a66af066ddda5c1631f9e5a3f130991299b5"
+    },
+    "app/lib/arm64-v8a/libverify.so": {
+      "size": 54760,
+      "sha256": "74272e4ddfcf4ad7dc8c1375f4dc312422d7075d68a96b34b8dea376ee30796d"
+    },
+    "app/lib/arm64-v8a/libzip.so": {
+      "size": 30256,
+      "sha256": "87b2df975854ad4f13258cba6e3f9f5fbb67d471ab25cff3c9f6eb786bdb1d8c"
+    },
+    "app/licenses/117HD-GLES-LICENSE.txt": {
+      "size": 1470,
+      "sha256": "278f54014192f00c3fba039b7f7df7b7c7336df8d5450668da0da7603ada691d"
+    },
+    "app/licenses/Caciocavallo-GPL-2.0-Classpath.txt": {
+      "size": 19263,
+      "sha256": "067d8f7f645efe1131a9df13aa80ec2910d4ff898f9b14d337443a4202d56ab6"
+    },
+    "app/licenses/Caciocavallo17-GPL-2.0-Classpath.txt": {
+      "size": 19263,
+      "sha256": "067d8f7f645efe1131a9df13aa80ec2910d4ff898f9b14d337443a4202d56ab6"
+    },
+    "app/licenses/FCL-GPL-3.0.txt": {
+      "size": 35129,
+      "sha256": "605e9047a563c5c8396ffb18232aa4304ec56586aee537c45064c6fb425e44ad"
+    },
+    "app/licenses/LWJGL-GLES-LICENSE.txt": {
+      "size": 1518,
+      "sha256": "4c2f770897d0cfda4d9a65bb4d6d6983dccfd57d4c7eb74ea5ded0762cbc0e75"
+    },
+    "app/licenses/Mesa-OSMesa-notice.txt": {
+      "size": 2119,
+      "sha256": "7fd18516de5ca0a6d21d523ea272506a7152b1abfa969dde74a1a7d3a7776b6d"
+    },
+    "app/licenses/Noto-OFL.txt": {
+      "size": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "app/licenses/RuneLite-BSD-2-Clause.txt": {
+      "size": 1334,
+      "sha256": "dd35829a586785621651857262168bd91374a84669592d2db28520648b55a519"
+    },
+    "app/licenses/SPIRV-Cross-LICENSE.txt": {
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "app/licenses/VirGL-MIT.txt": {
+      "size": 1098,
+      "sha256": "3b32caf16e2402c2aff2b716858713f3e1feded85c25e71bf829816ee5009402"
+    },
+    "app/licenses/glslang-LICENSE.txt": {
+      "size": 54705,
+      "sha256": "adb783e734e906d1f46db5df29991dbde84bdb0ceab502ac2febb44fe3c2b5f4"
+    },
+    "app/licenses/jars/commons-lang3-3.7.jar/META-INF/LICENSE.txt": {
+      "size": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    "app/licenses/jars/commons-lang3-3.7.jar/META-INF/NOTICE.txt": {
+      "size": 309,
+      "sha256": "87957e8bf911f2c0d5531020828cb6da296d9b93c4ce6b4fc9906c3f41e486e4"
+    },
+    "app/licenses/jars/commons-text-1.2.jar/META-INF/LICENSE.txt": {
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "app/licenses/jars/commons-text-1.2.jar/META-INF/NOTICE.txt": {
+      "size": 173,
+      "sha256": "9a01af1a325277db168342f7513087434541b9a97ff20eb1faf0353aae97e04b"
+    },
+    "app/licenses/jars/flatlaf-3.2.5-rl4.jar/META-INF/LICENSE": {
+      "size": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "app/licenses/jars/guice-4.1.0-no_aop.jar/META-INF/LICENSE": {
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "app/licenses/jars/guice-4.1.0-no_aop.jar/META-INF/NOTICE": {
+      "size": 166,
+      "sha256": "671242df93001a2fd0e575f08f9437817b8b87c78f6376e87ac72bda40ef3d77"
+    },
+    "app/licenses/jars/jna-5.9.0.jar/META-INF/LICENSE": {
+      "size": 788,
+      "sha256": "521bb271ac56e0e29a1b1b688b94af17d00d378fc8e63478d8c8b2a7c4a229d0"
+    },
+    "app/licenses/jars/jna-platform-5.9.0.jar/META-INF/LICENSE": {
+      "size": 788,
+      "sha256": "521bb271ac56e0e29a1b1b688b94af17d00d378fc8e63478d8c8b2a7c4a229d0"
+    },
+    "app/licenses/jars/okhttp-3.14.9.jar/okhttp3/internal/publicsuffix/NOTICE": {
+      "size": 218,
+      "sha256": "8a9c58fbded5ea3474315e4a9824ca8b1486098a1a03e897e0b19419d5e1876a"
+    },
+    "hd-plugin/tools/lombok-1.18.30.jar": {
+      "size": 2011339,
+      "sha256": "14151b47582d570b4de16a147ece3bdbd19ace4aee5bde3a5578c87db9ecb998"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+package dev.mobile.rlhd.overlays;
+
+import com.google.inject.Singleton;
+import javax.inject.Inject;
+import javax.swing.SwingUtilities;
+import lombok.extern.slf4j.Slf4j;
+import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.events.ConfigChanged;
+import dev.mobile.rlhd.HdPluginConfig;
+
+import static dev.mobile.rlhd.mobile.MobileGL.*;
+import static dev.mobile.rlhd.HdPluginConfig.*;
+import static dev.mobile.rlhd.utils.MathUtils.*;
+
+@Slf4j
+@Singleton
+public class GammaCalibrationOverlay extends ShaderOverlay<GammaCalibrationOverlay.Shader> {
+	@Inject
+	private HdPluginConfig config;
+
+	static class Shader extends ShaderOverlay.Shader {
+		public Uniform1f uniCalibrationTimer = addUniform1f("calibrationTimer");
+
+		public Shader() {
+			super(t -> t.add(GL_FRAGMENT_SHADER, "overlays/gamma_calibration_frag.glsl"));
+		}
+	}
+
+	private long brightnessChangedAt;
+
+	public GammaCalibrationOverlay() {
+		setBorderless(true);
+		setCentered(true);
+		setMaintainAspectRatio(true);
+		setInitialSize(300, 100);
+	}
+
+	private float getTimeout() {
+		final int gammaCalibrationTimeout = 3000;
+		long t = System.currentTimeMillis() - brightnessChangedAt;
+		return saturate(1 - (float) t / gammaCalibrationTimeout);
+	}
+
+	@Override
+	public boolean isHidden() {
+		return super.isHidden() || getTimeout() <= 0 || config.useLegacyBrightness();
+	}
+
+	@Override
+	protected void updateUniforms() {
+		shader.uniCalibrationTimer.set(getTimeout());
+	}
+
+	@Subscribe
+	public void onConfigChanged(ConfigChanged event) {
+		// Try showing the overlay only in response to manually changing the brightness setting
+		if (event.getGroup().equals(CONFIG_GROUP) &&
+			event.getKey().equals(KEY_BRIGHTNESS) &&
+			event.getOldValue() != null &&
+			SwingUtilities.isEventDispatchThread())
+			brightnessChangedAt = System.currentTimeMillis();
+	}
+}

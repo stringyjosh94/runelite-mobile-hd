@@ -1,0 +1,33 @@
+name: Device or rendering report
+description: Report compatibility, input, graphics or performance observations.
+body:
+  - type: markdown
+    attributes:
+      value: "Do not attach credentials.properties or signing keys. Inspect logs/screenshots for personal information."
+  - type: input
+    id: device
+    attributes:
+      label: Device model and Android version
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected result and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: performance
+    attributes:
+      label: FPS, scene, graphics settings and test duration
+      description: Include charging/battery saver and warmth if relevant.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted log or screenshots
