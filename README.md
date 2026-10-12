@@ -1,4 +1,10 @@
+<img width="192" height="192" alt="image" src="https://github.com/user-attachments/assets/4e4713ab-5fc0-4b78-a994-b7c86aa3f144" />
+
 # Runelite Mobile (HD)
+
+
+https://github.com/user-attachments/assets/9ab506fa-9894-4857-af6a-55c97527190a
+
 
 An unofficial, experimental Android adaptation of RuneLite with touch controls and a modified 117HD renderer. It runs an embedded Java runtime and native OpenGL ES graphics inside the app. A separate Linux installation is not required.
 
