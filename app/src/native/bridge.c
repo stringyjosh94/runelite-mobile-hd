@@ -334,3 +334,21 @@ JNIEXPORT jstring JNICALL Java_dev_mobile_runelite_NativeBridge_settings(JNIEnv 
     (*env)->PopLocalFrame(env,NULL);
     return output?output:(*art)->NewStringUTF(art,"{\"error\":\"Settings bridge failed\"}");
 }
+
+/* Pull notification text across the two VMs using UTF-16 copies, never JNI refs. */
+JNIEXPORT jstring JNICALL Java_dev_mobile_runelite_NativeBridge_notification(JNIEnv *art,jclass cls) {
+    JNIEnv *env=runtime_env();
+    if(!env || (*env)->PushLocalFrame(env,8)!=JNI_OK)return NULL;
+    jstring result=NULL;
+    jclass host=(*env)->FindClass(env,"dev/mobile/runelite/MobileNotifications");
+    if(host && !describe(env)) {
+        jmethodID method=(*env)->GetStaticMethodID(env,host,"poll","()Ljava/lang/String;");
+        jstring text=method?(jstring)(*env)->CallStaticObjectMethod(env,host,method):NULL;
+        if(!describe(env) && text) {
+            jsize length=(*env)->GetStringLength(env,text);
+            const jchar *chars=(*env)->GetStringChars(env,text,NULL);
+            if(chars) {result=(*art)->NewString(art,chars,length);(*env)->ReleaseStringChars(env,text,chars);}
+        }
+    }
+    describe(env);(*env)->PopLocalFrame(env,NULL);return result;
+}

@@ -22,6 +22,14 @@ public final class MobileSettings {
   PluginManager manager=RuneLite.getInjector().getInstance(PluginManager.class);
   ConfigManager config=RuneLite.getInjector().getInstance(ConfigManager.class);
   String op=request.get("op").getAsString();JsonObject out=new JsonObject();
+  if(op.equals("notificationTest")) {
+   net.runelite.client.config.Notification n=new net.runelite.client.config.Notification()
+       .withEnabled(true).withTray(false).withSendWhenFocused(false)
+       .withSound(net.runelite.client.config.NotificationSound.NATIVE);
+   RuneLite.getInjector().getInstance(net.runelite.client.eventbus.EventBus.class).post(
+       new net.runelite.client.events.NotificationFired(n,"RuneLite gameplay notification bridge is working.",java.awt.TrayIcon.MessageType.NONE));
+   out.addProperty("ok",true);return out;
+  }
   if(op.equals("gameScale")) {
    int amount=request.get("amount").getAsInt();
    if(!Arrays.asList(0,15,30,45).contains(amount))throw new IllegalArgumentException("Unsupported UI scale");

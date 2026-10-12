@@ -4,15 +4,17 @@ An unofficial, experimental Android adaptation of RuneLite with touch controls a
 
 This is a personal education and hobby project, started out of enthusiasm for Old School RuneScape. The maintainer supplied ideas, direction and device testing. Project-specific implementation and integration were generated with AI coding tools. The underlying clients, libraries, renderer and artwork come from their respective creators; this project does not claim to have created them. AI-generated changes can contain mistakes and need independent review.
 
+![Runelite Mobile HD Android gameplay preview](docs/media/runelite-mobile-hd-demo.gif)
+
 ## Install and play
 
 Install the APK from this repository's **Releases** page. Follow [Getting started](docs/GETTING-STARTED.md), including the [desktop login-file tutorial](docs/LOGIN.md). After setup, the app starts the client automatically. Android Back opens the app menu.
 
-The current release candidate is **v35**. It has Low / Medium / High graphics profiles, a Mobile HD launcher icon, manual sidebar enlargement and a simplified setup/menu. See [Release notes](docs/RELEASE-NOTES.md).
+The current build is **v36.4**. It includes improved drag detection, Android notifications from Idle Notifier and other compatible plugins, and a fullscreen startup fix. Low / Medium / High graphics profiles and manual sidebar enlargement remain available. See [Release notes](docs/RELEASE-NOTES.md), [Touch controls](docs/TOUCH-CONTROLS.md) and [Notifications](docs/NOTIFICATIONS.md).
 
 ## Compatibility
 
-The APK requires Android 8 or newer, a 64-bit ARM Android installation and a working OpenGL ES 3.2 driver. Meeting these requirements does not guarantee comfortable gameplay.
+The supplied APK requires Android 8 or newer, a 64-bit ARM Android installation, 4 KB memory pages and a working OpenGL ES 3.2 driver. Meeting these requirements does not guarantee comfortable gameplay. Other architecture build options require separate runtime dependencies; they are not supported releases. See [Android compatibility](docs/ANDROID-COMPATIBILITY.md).
 
 Testing has been limited to a Pixel 10a and Lenovo Tab M10 (3rd Gen), with different development builds and settings. Performance, heat, map coverage and plugin compatibility have not been established across Android devices. No minimum FPS, universal compatibility or account safety is promised. See [Device testing](docs/DEVICE-TESTING.md) and [Plugin compatibility](docs/PLUGIN-COMPATIBILITY.md).
 

@@ -23,6 +23,7 @@ public final class MainActivity extends Activity {
     private LinearLayout toolbar;
     private AlertDialog controls;
     private SwingView screen;
+    private AndroidNotifications notifications;
     private SurfaceView gameSurface;
     private FrameLayout gameLayers;
     private File base, home, log;
@@ -48,9 +49,15 @@ public final class MainActivity extends Activity {
         base = new File(getFilesDir(), "runtime-v1");
         home = new File(getFilesDir(), "home"); home.mkdirs();
         log = new File(home, "startup.log");
-        NativeBridge.init(getApplicationContext());
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
-            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        if (!checkRuntimeCompatibility()) return;
+        try { NativeBridge.init(getApplicationContext()); }
+        catch (LinkageError error) {
+            new AlertDialog.Builder(this).setTitle("Native runtime unavailable")
+                .setMessage("This APK could not load its native libraries. Install the build for your Android architecture. " + error.getClass().getSimpleName())
+                .setPositiveButton("Close",(d,w)->finish()).setCancelable(false).show();
+            return;
+        }
+        notifications=new AndroidNotifications(this);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
         LinearLayout layout = new LinearLayout(this); layout.setOrientation(LinearLayout.VERTICAL);
@@ -82,6 +89,14 @@ public final class MainActivity extends Activity {
             public void onStopTrackingTouch(SeekBar bar) {}
         });toolbar.addView(speed);
         button(toolbar, "Diagnostic logs", this::showLogs);
+        button(toolbar,"Android notification settings",()->notifications.settings());
+        button(toolbar,"Test Android notification",()->notifications.send("RuneLite notifications are working.",true));
+        button(toolbar,"Test RuneLite notification",()->new Thread(()-> {
+            String result=NativeBridge.settings("{\"op\":\"notificationTest\"}");
+            ui.post(()-> {if(result==null || result.contains("error"))
+                new AlertDialog.Builder(this).setTitle("RuneLite notification test")
+                    .setMessage(result==null?"Wait for RuneLite to finish loading.":result).setPositiveButton("OK",null).show();});
+        },"notification-test").start());
         // Controls live in a dialog; the game owns the entire activity surface.
         status = new TextView(this); status.setPadding(12, 4, 12, 4);
         status.setText("117HD mobile • tap: click • hold: menu • drag: camera • pinch: zoom");
@@ -101,6 +116,8 @@ public final class MainActivity extends Activity {
         gameLayers.addView(launchStatus,new FrameLayout.LayoutParams(-1,-1));
         layout.addView(gameLayers, new LinearLayout.LayoutParams(-1, 0, 1));
         setContentView(layout);
+        enterFullscreen();
+        getWindow().getDecorView().post(this::enterFullscreen);
         if (Build.VERSION.SDK_INT >= 28) {
             WindowManager.LayoutParams params = getWindow().getAttributes();
             params.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
@@ -113,6 +130,40 @@ public final class MainActivity extends Activity {
         if (NativeBridge.running) {
             started = true; start.setEnabled(false); startFrames();
         }
+    }
+
+    private boolean checkRuntimeCompatibility() {
+        try {
+            JSONObject compatibility=new JSONObject(assetText("device-compatibility.json"));
+            String abi=compatibility.getString("abi");
+            long pageSize=Os.sysconf(android.system.OsConstants._SC_PAGESIZE);
+            if (!Arrays.asList(Build.SUPPORTED_ABIS).contains(abi))
+                throw new IOException("This APK is for "+abi+". Your Android system supports "+Arrays.toString(Build.SUPPORTED_ABIS)+".");
+            if (pageSize>4096 && (pageSize!=16384 || !compatibility.getBoolean("elf16k")))
+                throw new IOException("This device uses "+pageSize+"-byte memory pages. The bundled Java runtime still needs a 16 KB compatible rebuild. This APK cannot run safely on this configuration.");
+            return true;
+        } catch (Exception error) {
+            new AlertDialog.Builder(this).setTitle("Device compatibility")
+                .setMessage(error.getMessage()).setPositiveButton("Close",(d,w)->finish()).setCancelable(false).show();
+            return false;
+        }
+    }
+    private void enterFullscreen() {
+        // Materialize the decor before requesting insets. PhoneWindow's getter
+        // can dereference a null decor during early Activity.onCreate.
+        View decor=getWindow().getDecorView();
+        if (Build.VERSION.SDK_INT>=30) {
+            WindowInsetsController controller=decor.getWindowInsetsController();
+            if (controller!=null) {
+                controller.hide(WindowInsets.Type.statusBars()|WindowInsets.Type.navigationBars());
+                controller.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                return;
+            }
+        }
+        // Also covers a decor that has not attached yet. The posted/focus call
+        // switches to the modern controller when attachment completes.
+        decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     private Button button(LinearLayout parent, String label, Runnable action) {
@@ -220,10 +271,16 @@ public final class MainActivity extends Activity {
                 prepare();
                 android.util.Log.i("RuneLiteMobile","Device="+Build.MANUFACTURER+" "+Build.MODEL+" Android="+Build.VERSION.RELEASE+" viewport="+WIDTH+"x"+HEIGHT+" preset="+hdProfile);
                 System.out.println("Device="+Build.MANUFACTURER+" "+Build.MODEL+" viewport="+WIDTH+"x"+HEIGHT+" preset="+hdProfile);
+                ActivityManager manager=(ActivityManager)getSystemService(ACTIVITY_SERVICE);
+                ActivityManager.MemoryInfo memory=new ActivityManager.MemoryInfo();manager.getMemoryInfo(memory);
+                int heap=DeviceRuntimePolicy.heapMiB(memory.totalMem,manager.isLowRamDevice(),android.os.Process.is64Bit());
+                android.util.Log.i("RuneLiteMobile","Android API="+Build.VERSION.SDK_INT+" ABIs="+Arrays.toString(Build.SUPPORTED_ABIS)+" pages="+Os.sysconf(android.system.OsConstants._SC_PAGESIZE)+" heapMiB="+heap);
+                System.out.println("Android API="+Build.VERSION.SDK_INT+" ABIs="+Arrays.toString(Build.SUPPORTED_ABIS)+" pages="+Os.sysconf(android.system.OsConstants._SC_PAGESIZE)+" heapMiB="+heap);
                 List<String> options = new ArrayList<>();
+                options.add("-Xmx"+heap+"m");
                 JSONArray defaults = new JSONArray(assetText("jvm-options.json"));
                 for (int i=0; i<defaults.length(); i++)
-                    if (!defaults.getString(i).startsWith("-Dcacio.managed.screensize=")) options.add(defaults.getString(i));
+                    if (!defaults.getString(i).startsWith("-Dcacio.managed.screensize=") && !defaults.getString(i).startsWith("-Xmx")) options.add(defaults.getString(i));
                 options.add("-Dcacio.managed.screensize=" + WIDTH + "x" + HEIGHT);
                 File jre = new File(base, "jre"), cacio = new File(base, "cacio");
                 options.add("-Djava.home=" + jre);
@@ -494,6 +551,7 @@ public final class MainActivity extends Activity {
             .setNeutralButton("Login help",(d,w)->showLoginHelp()).create();controls.show();
     }
     @Override public void onBackPressed() {
+        if(screen==null) {finish();return;}
         if(keyboardShown) {setKeyboard(false);return;}
         if(screen.interfaceZoom>1f) { screen.cancelGesture();screen.interfaceZoom=1f;screen.invalidate();return; }
         if(!started) { showLoginSetup();return; }
@@ -501,11 +559,11 @@ public final class MainActivity extends Activity {
     }
     @Override public void onWindowFocusChanged(boolean focused) {
         super.onWindowFocusChanged(focused);
-        if (focused) getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
-            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        if (focused) enterFullscreen();
     }
-    @Override protected void onPause() { if (screen != null) screen.cancelGesture(); super.onPause(); }
-    @Override protected void onDestroy() { drawing = false; NativeBridge.surface(null);super.onDestroy(); }
+    @Override protected void onResume() {super.onResume();if(notifications!=null)notifications.foreground(true);}
+    @Override protected void onPause() { if(notifications!=null)notifications.foreground(false); if (screen != null) screen.cancelGesture(); super.onPause(); }
+    @Override protected void onDestroy() { if(notifications!=null)notifications.stop(); drawing = false; if (screen!=null) NativeBridge.surface(null);super.onDestroy(); }
 
     private final class SwingView extends View {
         private final ScaleGestureDetector zoom;
@@ -584,12 +642,13 @@ public final class MainActivity extends Activity {
         void enlargeSidebar() {
             interfaceZoom=ViewportSizing.sidebarZoom(HEIGHT);panY=0;invalidate();
         }
+        private final TouchIntent touchIntent=new TouchIntent();
         private float downX, downY;
         private int lastX, lastY;
         private boolean committed, multi, gameDrag, longPressed, menuMoved;
         private int previousX, previousY;
         private final Runnable hold = () -> {
-            if (!committed && !multi) {
+            if (!committed && !multi && !touchIntent.dragged()) {
                 committed = true; longPressed=true;
                 NativeBridge.input(1003, lastX, lastY, 0, 0);
                 NativeBridge.input(1006, 4100, 1, 0, 0);
@@ -610,10 +669,28 @@ public final class MainActivity extends Activity {
             previousX=lastX;previousY=lastY;
             lastX=virtualX(event.getX());lastY=virtualY(event.getY());
             NativeBridge.input(1003, lastX, lastY, 0, 0);
+            boolean beganDrag=false;
+            if(!committed && !multi && (action==MotionEvent.ACTION_MOVE || action==MotionEvent.ACTION_UP)) {
+                for(int i=0;i<event.getHistorySize();i++)
+                    touchIntent.sample(event.getHistoricalX(i),event.getHistoricalY(i));
+                touchIntent.sample(event.getX(),event.getY());
+                if(touchIntent.dragged()) {
+                    ui.removeCallbacks(hold);committed=true;beganDrag=true;
+                    if(gameDrag) {
+                        NativeBridge.input(1008,(reverseCamera?-1:1)*Math.round((lastX-virtualX(downX))*cameraSensitivity),
+                            Math.round((lastY-virtualY(downY))*cameraSensitivity),0,0);
+                    } else {
+                        sidebarDragging=true;
+                        NativeBridge.input(1012,virtualX(downX),virtualY(downY),0,0);
+                        NativeBridge.input(1013,lastX,lastY,0,0);
+                    }
+                }
+            }
             if (action == MotionEvent.ACTION_DOWN) {
                 releaseMouse(); committed = false; multi = false; longPressed=false;menuMoved=false;
                 if (!destination.contains(event.getX(), event.getY())) { committed = true; return true; }
                 downX = event.getX(); downY = event.getY();
+                touchIntent.begin(downX,downY,ViewConfiguration.get(getContext()).getScaledTouchSlop());
                 gameDrag = interfaceZoom==1f && automaticDrag && NativeBridge.gameCanvasAt(lastX, lastY);
                 ui.postDelayed(hold, ViewConfiguration.getLongPressTimeout());
             } else if (action == MotionEvent.ACTION_POINTER_DOWN) {
@@ -642,28 +719,18 @@ public final class MainActivity extends Activity {
                 float dx=event.getX()-downX,dy=event.getY()-downY;
                 int slop=ViewConfiguration.get(getContext()).getScaledTouchSlop();
                 if(dx*dx+dy*dy>slop*slop)menuMoved=true;
-            } else if (action == MotionEvent.ACTION_MOVE && committed && gameDrag && !multi) {
+            } else if (action == MotionEvent.ACTION_MOVE && committed && gameDrag && !multi && !beganDrag) {
                 NativeBridge.input(1008,(reverseCamera?-1:1)*Math.round((lastX-previousX)*cameraSensitivity),Math.round((lastY-previousY)*cameraSensitivity),0,0);
-            } else if (action == MotionEvent.ACTION_MOVE && committed && sidebarDragging && !multi) {
+            } else if (action == MotionEvent.ACTION_MOVE && committed && sidebarDragging && !multi && !beganDrag) {
                 NativeBridge.input(1013,lastX,lastY,0,0);
-            } else if (action == MotionEvent.ACTION_MOVE && !committed) {
-                float dx = event.getX()-downX, dy = event.getY()-downY;
-                int slop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-                if (dx*dx + dy*dy > slop*slop) {
-                    ui.removeCallbacks(hold); committed = true;
-                    if(gameDrag) {
-                        // Start relative rotation here; do not rewind a stale emulated mouse anchor.
-                        NativeBridge.input(1008,(reverseCamera?-1:1)*Math.round((lastX-previousX)*cameraSensitivity),Math.round((lastY-previousY)*cameraSensitivity),0,0);
-                    } else {
-                        sidebarDragging=true;
-                        NativeBridge.input(1012,virtualX(downX),virtualY(downY),0,0);
-                        NativeBridge.input(1013,lastX,lastY,0,0);
-                    }
-                }
             } else if (action == MotionEvent.ACTION_POINTER_UP) {
                 pinchScene=false;pinchSpan=0;releaseMouse();
             } else if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
                 ui.removeCallbacks(hold);
+                if(action==MotionEvent.ACTION_UP && committed && gameDrag && !multi && !longPressed && !beganDrag)
+                    NativeBridge.input(1008,(reverseCamera?-1:1)*Math.round((lastX-previousX)*cameraSensitivity),Math.round((lastY-previousY)*cameraSensitivity),0,0);
+                if(action==MotionEvent.ACTION_UP && committed && sidebarDragging && !multi && !beganDrag)
+                    NativeBridge.input(1013,lastX,lastY,0,0);
                 if(action==MotionEvent.ACTION_UP && longPressed && menuMoved && !multi)
                     NativeBridge.input(1009,0,0,0,0);
                 if (action == MotionEvent.ACTION_UP && !committed) {

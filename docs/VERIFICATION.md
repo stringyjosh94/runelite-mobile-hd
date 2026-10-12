@@ -1,23 +1,23 @@
-# Verification limits
+# Verification and testing limits
 
-The current source has been built and the desktop regression suite passed during development. The v35 APK's signing identity, resource compilation, non-debuggable manifest, disabled backups, adaptive icon and absence of credential/key files were checked. These checks are not an independent security or licence audit.
+The v36.4 APK compiled successfully and passed signing and APK alignment checks. The desktop regression suite passed, including touch-intent and notification-routing tests. These checks do not establish Android GPU performance, universal device compatibility or an independent security review.
 
 ## Desktop checks
 
-`python3 tools/test.py` checks input routing, real pinned-client camera/wheel behaviour, menu selection, sidebar scrolling, text focus, stretch sizing, widget hit testing, frame ownership, Swing composition, native Surface lifecycle doubles, profile switching/light limits, settings compatibility and login-file deletion.
+`python3 tools/test.py` checks camera and pointer routing, menu selection, sidebar scrolling, keyboard focus, viewport sizing, frame ownership, Swing composition, Surface lifecycle test doubles, graphics profiles and login-file deletion.
 
-The optional native GLES tool checks copied-frame pixels/orientation/state/lifecycle with desktop EGL/GLES. With a matching Linux shader translator, it also compiles Efficient/rich scene-shader variants and checks diagnostic queries. Fixture scene data is used. Desktop software Mesa is not evidence of Android GPU speed or full-map correctness.
+Touch traces cover tap jitter, release-only swipes, historical out-and-back movement, vertical drags, device-scaled thresholds and gesture reset. Notification tests cover enabled and disabled events, desktop tray/focus independence, message cleanup and queue bounds.
 
-## Requires Android testing
+Compatibility checks cover memory budgets and mismatched native dependencies. The supplied ARM64 runtime does not pass the strict 16 KB compatibility gate. Other architecture fixtures are validation tests, not working runtime distributions.
 
-First-run dialogs/file picker, actual account login, keyboard behaviour, physical gestures, Surface composition, home-screen masks, thermal performance, complete map coverage and Plugin Hub compatibility require real devices. Follow [Device testing](DEVICE-TESTING.md). Earlier Pixel/Lenovo observations do not establish every feature of the current release.
+Optional desktop GLES tests use fixture scenes. Software Mesa results do not establish Android GPU speed or complete map correctness.
+
+## Android checks
+
+Manual device tests are required for physical gestures, gameplay alert triggers, permissions, keyboard, account setup, app switching, screen lock, rendering, heat and performance. Notification delivery and earlier HD gameplay have been reported during development; coverage is limited to the devices and builds tested. Follow [Device testing](DEVICE-TESTING.md).
 
 ## Distribution checks
 
-`python3 tools/package-source.py` exports Git-visible source files and checks for obvious private/generated files and oversized Git files. `tools/package-runtime.py` creates a separate dependency pack and records hashes. Hashes identify a snapshot; they do not prove that dependencies are secure or licensed for every intended distribution.
+`python3 tools/package-source.py --check` checks Git-visible filenames and sizes for obvious private or generated files. Review file contents before publishing. Checksums identify downloads; they do not prove security or licensing suitability.
 
-A clean restore and build must succeed with the published source and matching pack. A newly generated development key will differ from the supplied APK's key, so the resulting APK is not expected to have an identical hash or update the supplied installation.
-
-## Source handover check
-
-The cleaned v35 source archive was extracted into an empty folder, the matching v35 runtime pack was restored, the APK was rebuilt with the documented build tool, and the full desktop regression suite passed there. Every runtime-pack entry was checked against its manifest. This verifies the source/dependency handover on the current Linux toolchain; it does not add new Android device test coverage.
+Source builds require the matching v35 runtime pack. Earlier source/dependency handover builds succeeded with that pack; this does not replace a fresh restore test of each published snapshot. Source builds create a separate development signing key unless a private key is supplied, so they are not expected to match the distributed APK hash or update its installation.

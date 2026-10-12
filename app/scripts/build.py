@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import tempfile
 import zipfile
+from compatibility import ABIS, EXCLUDED, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -20,17 +21,19 @@ def main():
     parser.add_argument('--jdk', default=os.environ.get('JAVA_HOME', '/usr/lib/jvm/java-17-openjdk'))
     parser.add_argument('--build-dir')
     parser.add_argument('--ndk', default='25.2.9519653')
-    parser.add_argument('--abi', choices=['arm64-v8a', 'x86_64'], default='arm64-v8a')
-    parser.add_argument('--output', default=str(ROOT.parent / 'runelite-android-example.apk'))
+    parser.add_argument('--abi', choices=list(ABIS), default='arm64-v8a')
+    parser.add_argument('--runtime-root', type=Path, help='Directory containing jre/ and lib/<abi>/ for a separately sourced runtime')
+    parser.add_argument('--require-16k', action='store_true', help='Fail unless every packaged ELF supports 16 KB alignment')
+    parser.add_argument('--output', default=str(ROOT.parent / 'dist/runelite-mobile-hd-v36.4-touch.apk'))
     args = parser.parse_args()
     sdk, jdk = Path(args.sdk), Path(args.jdk)
     tools = sdk / 'build-tools/34.0.0'
     android = sdk / 'platforms/android-34/android.jar'
     ndk = sdk / 'ndk' / args.ndk
-    arch = 'aarch64' if args.abi == 'arm64-v8a' else 'x86_64'
-    clang = ndk / ('toolchains/llvm/prebuilt/linux-x86_64/bin/'+arch+'-linux-android26-clang')
-    native = ROOT/'lib'/args.abi
-    native.mkdir(parents=True, exist_ok=True)
+    clang = ndk / ('toolchains/llvm/prebuilt/linux-x86_64/bin/'+ABIS[args.abi][3]+'26-clang')
+    native = (args.runtime_root/'lib'/args.abi) if args.runtime_root else ROOT/'lib'/args.abi
+    jre = (args.runtime_root/'jre') if args.runtime_root else ROOT/'assets/jre'
+    validate(jre, native, args.abi, before_build=True, strict_pages=args.require_16k)
     build = Path(args.build_dir) if args.build_dir else Path(tempfile.mkdtemp(prefix='runelite-android-build-'))
     build.mkdir(parents=True, exist_ok=True)
     env = dict(os.environ, JAVA_HOME=str(jdk))
@@ -54,15 +57,20 @@ def main():
     run(clang, '-shared', '-fPIC', '-O2', '-Wl,-z,max-page-size=16384',
         '-I'+str(jdk/'include'), '-I'+str(jdk/'include/linux'), ROOT/'src/native/xawt_fake.c',
         '-L'+str(native), '-Wl,--no-as-needed', '-lawt_headless', '-o', native/'libawt_xawt.so')
+    unaligned = validate(jre, native, args.abi, strict_pages=args.require_16k)
+    print('ABI:', args.abi, '16 KB ELF alignment:', 'PASS' if not unaligned else 'INCOMPLETE: '+', '.join(unaligned))
     run(jdk/'bin/javac', '-source', '8', '-target', '8', '-bootclasspath', str(android)+os.pathsep+str(tools/'core-lambda-stubs.jar'),
         '-d', build/'android-classes', ROOT/'src/host/dev/mobile/runelite/MobileHdProfiles.java', *sorted((ROOT/'src/android').rglob('*.java')))
     run(tools/'d8', '--min-api', '26', '--lib', android, '--output', build/'dex',
         *sorted((build/'android-classes').rglob('*.class')), env=env)
+    compatibility = build/'device-compatibility.json'
+    compatibility.write_text(__import__('json').dumps({'abi': args.abi, 'elf16k': not unaligned, 'unaligned': unaligned}))
     payload = hashlib.sha256()
-    for directory in [ROOT/'assets/client', ROOT/'assets/cacio', ROOT/'assets/jre', native]:
+    payload.update(compatibility.read_bytes())
+    for directory in [ROOT/'assets/client', ROOT/'assets/cacio', jre, native]:
         for file in sorted(directory.rglob('*')):
             if file.is_file():
-                payload.update(str(file.relative_to(ROOT)).encode())
+                payload.update((str(file.relative_to(directory))).encode())
                 payload.update(file.read_bytes())
     payload.update((ROOT/'assets/jvm-options.json').read_bytes())
     (ROOT/'assets/payload-id.txt').write_text(payload.hexdigest())
@@ -75,11 +83,17 @@ def main():
         for directory in ['assets', 'lib', 'licenses']:
             for file in sorted((ROOT/directory).rglob('*')):
                 if file.is_file():
-                    if directory == 'lib' and file.parent.name != args.abi: continue
+                    if directory == 'lib': continue
+                    if directory == 'assets' and file.is_relative_to(ROOT/'assets/jre'): continue
                     if file.name in ('libOSMesa_81.so', 'libvirgl_test_server.so'): continue
                     name = str(file.relative_to(ROOT))
                     if directory == 'licenses': name = 'assets/licenses/' + str(file.relative_to(ROOT/'licenses'))
                     archive.write(file, name)
+        for file in sorted(jre.rglob('*')):
+            if file.is_file(): archive.write(file, 'assets/jre/'+str(file.relative_to(jre)))
+        for file in sorted(native.glob('*.so')):
+            if file.name not in EXCLUDED: archive.write(file, 'lib/'+args.abi+'/'+file.name)
+        archive.write(compatibility, 'assets/device-compatibility.json')
     aligned = build/'aligned.apk'
     run(tools/'zipalign', '-f', '-p', '4', unsigned, aligned)
     key = build/'debug.keystore'

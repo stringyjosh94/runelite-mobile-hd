@@ -22,7 +22,7 @@ def selected_files():
     return result
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',type=Path,default=ROOT/'dist/runelite-mobile-hd-source-v35.zip')
+    parser.add_argument('--output',type=Path,default=ROOT/'dist/runelite-mobile-hd-source-v36.4.zip')
     parser.add_argument('--check',action='store_true',help='Check the export list without writing an archive')
     a=parser.parse_args();files=selected_files()
     print(f'Checked {len(files)} source files; {sum(p.stat().st_size for _,p in files)/1024/1024:.1f} MiB uncompressed.')

@@ -1,21 +1,22 @@
-# v35 release candidate
+# v36.4 — Touch controls and Android notifications
 
-This is an experimental ARM64 Android client. Install `runelite-mobile-hd-v35.apk`; developers also need `runelite-mobile-hd-runtime-v35.zip`. The source-only archive is `runelite-mobile-hd-source-v35.zip`.
+APK: `runelite-mobile-hd-v36.4-touch-arm64-v8a.apk`
+Android version: `0.36.4-mobile-hd` · Version code: `42`
 
-## Included
+## Changes
 
-- Embedded Java/Swing RuneLite client with a modified native GLES 3.2 HD renderer.
-- Tap, camera drag, pinch zoom, item drag and hold-slide-release menu controls.
-- Low / Medium / High profiles with 100% scene resolution and 2 / 4 / 8 nearby lights.
-- Direct Android Surface presentation with copied-frame fallbacks.
-- One-time credential import, desktop export help, account replacement and clear-login.
-- Simplified Back menu, manual sidebar enlargement and touch scrolling.
-- Adaptive Mobile HD launcher icon; Android debugging and backups disabled.
+- Improved drag detection prevents fast camera swipes from becoming walk clicks. Movement recorded at release or in Android's batched touch events is included.
+- Camera rotation retains the start and end of a drag. Tap, pinch zoom and hold-slide-release menu selection remain available.
+- Enabled Idle Notifier alerts and other RuneLite notification events are forwarded to the phone's notification drawer, including while playing.
+- Added separate Android and RuneLite notification tests and a shortcut to Android notification settings.
+- Fixed fullscreen startup when Android's window controls are not yet attached.
 
-The documentation/source packaging was cleaned for publication without changing the v35 APK. Old build-by-build experiment notes are not part of the public source guides.
+The build retains the v36 Java runtime and native GLES HD renderer, three graphics profiles, credential import and manual sidebar enlargement. Source builds use the unchanged `runelite-mobile-hd-runtime-v35.zip` dependency pack.
 
-## Known limits
+## Requirements and limits
 
-Testing covers a small Pixel/Lenovo sample using earlier builds. Current profiles, setup flows and launcher masks need further device checks. Game/Plugin Hub updates can require code changes. Desktop renderer plugins are not universally compatible. Low retains reduced textures/material shading and does not promise desktop image quality or a minimum FPS.
+Android 8+, ARM64, 4 KB memory pages and OpenGL ES 3.2 are required by the supplied build. Other architectures and 16 KB devices are not supported by the supplied runtime. Device performance and graphics-plugin compatibility vary.
 
-The supplied APK uses the existing private development signing identity to preserve updates. The key is not distributed. A source build creates its own development key. See [Building](BUILDING.md), [Legal](../LEGAL.md) and [Device testing](DEVICE-TESTING.md).
+Enable Idle Notifier and configure its alert switches and thresholds. Android notification permissions, channel settings and Do Not Disturb control delivery and presentation. Alerts require the client to remain running and connected; screen-off delivery is not guaranteed. See [Notifications](NOTIFICATIONS.md).
+
+APK compilation, signing/alignment checks and desktop regression tests passed. Physical touch behaviour, notification delivery and performance still require build-specific device checks. Earlier Pixel and Lenovo reports are not universal compatibility results. See [Verification](VERIFICATION.md) and [Device testing](DEVICE-TESTING.md).

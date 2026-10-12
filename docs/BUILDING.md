@@ -23,7 +23,7 @@ python3 tools/build.py
 
 Replace the pack path with the download's real location. The first command verifies/restores the matching pack and checks required files. It does not compile the app. The second compiles the HD Java fork, host bridge, Android code, native presentation/input bindings and Android resources, then signs the APK.
 
-Output: `dist/runelite-mobile-hd-v35.apk`.
+Output: `dist/runelite-mobile-hd-v36.4-touch-arm64-v8a.apk`. v36.4 reuses the v35 dependency pack; no new runtime download is required.
 
 The pack supplies pinned OpenJDK/Cacio/RuneLite/LWJGL dependencies, ARM64 libraries, font/legal files and Lombok. It contains no credentials/signing key and does not fetch arbitrary newer client versions. Generated host/HD jars and presentation bindings are rebuilt from this repository. Restore a matching pack into a fresh folder; do not use a phone's app-data directory.
 
@@ -34,6 +34,12 @@ python3 tools/build.py --rebuild-native
 ```
 
 This compiles vendored glslang/SPIRV-Cross and can take longer. The normal build uses the pinned prebuilt translator from the dependency pack.
+
+## Architectures and newer Android devices
+
+The default is ARM64. `--abi` accepts the four current NDK architectures, but only ARM64 runtime dependencies are supplied. For another ABI use `--runtime-root` with a complete matching Android Java 17/native dependency set. The build checks runtime metadata and ELF machine types before packaging. `--require-16k` rejects any library without 16 KB alignment; the supplied pack does not pass this check yet. See [Android compatibility](ANDROID-COMPATIBILITY.md) for directory layout, commands and limitations.
+
+`--output` changes the output file path. Per-ABI native build directories avoid mixing compiler outputs. ARM64 retains the existing `build/android` signing key location; other architectures use their own build directories and keys.
 
 ## Check changes
 

@@ -227,6 +227,7 @@ public final class HostMain {
         // The HD renderer checks the real GLES capabilities when it starts.
         if (Boolean.getBoolean("runelite.android.startupGpuProbe")) GpuSupport.probe();
         System.out.println("MOBILE_CLIENT_START: launching RuneLite");
+        MobileNotifications.start();
         GlesPluginBootstrap.start();
         String capture = System.getProperty("example.capture");
         if (capture != null) {

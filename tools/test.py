@@ -4,6 +4,7 @@ from pathlib import Path
 import os,subprocess,json,re
 ROOT=Path(__file__).resolve().parents[1];BUILD=ROOT/'build/tests';BUILD.mkdir(parents=True,exist_ok=True)
 JDK=Path(os.environ.get('JAVA_HOME','/usr/lib/jvm/java-17-openjdk'))
+subprocess.run(['python3',str(ROOT/'tools/test-compatibility.py')],check=True)
 # Cross-language contract: Android gestures must reach our host handler through JNI.
 emitted=set(re.findall(r'NativeBridge.input\((\d+)',(ROOT/'app/src/android/dev/mobile/runelite/MainActivity.java').read_text()))
 bridge=(ROOT/'app/src/native/bridge.c').read_text()
@@ -17,7 +18,7 @@ subprocess.run(['cc','-D__ANDROID__','-I'+str(ROOT/'tests/native/include'),'-I'+
 subprocess.run([str(lifecycle)],check=True,timeout=10)
 
 cp=str(ROOT/'app/assets/client/*')
-sources=list((ROOT/'tests/java').rglob('*.java'))+[ROOT/'app/src/android/dev/mobile/runelite/StoredLogin.java',ROOT/'app/src/android/dev/mobile/runelite/ViewportSizing.java']
+sources=list((ROOT/'tests/java').rglob('*.java'))+[ROOT/'app/src/android/dev/mobile/runelite/TouchIntent.java',ROOT/'app/src/android/dev/mobile/runelite/StoredLogin.java',ROOT/'app/src/android/dev/mobile/runelite/ViewportSizing.java',ROOT/'app/src/android/dev/mobile/runelite/DeviceRuntimePolicy.java']
 subprocess.run([str(JDK/'bin/javac'),'-cp',cp,'-d',str(BUILD),*map(str,sources)],check=True)
 options=json.loads((ROOT/'app/assets/jvm-options.json').read_text())
 options=[o for o in options if not o.startswith('-Dcacio.managed.screensize=')]
@@ -25,7 +26,7 @@ options+=['-Duser.home='+str(BUILD/'home'),'-Dcacio.managed.screensize=1400x540'
     '-javaagent:'+str(ROOT/'app/assets/cacio/cacio-agent.jar'),'-Xbootclasspath/a:'+os.pathsep.join(map(str,sorted((ROOT/'app/assets/cacio').glob('*.jar')))),
     '-cp',str(BUILD)+os.pathsep+cp]
 env=dict(os.environ,LD_LIBRARY_PATH='/usr/lib'+os.pathsep+os.environ.get('LD_LIBRARY_PATH',''))
-for test in ['dev.mobile.runelite.DirectSurfaceCompositionSmoke','dev.mobile.runelite.GpuFramePoolSmoke','dev.mobile.runelite.SidebarTargetSmoke','dev.mobile.runelite.StretchSizingSmoke','ViewportSmoke','dev.mobile.runelite.SidebarScrollSmoke','HdCompatibilitySmoke','HdProfilesSmoke','StoredLoginSmoke','dev.mobile.runelite.CompositionSmoke','dev.mobile.runelite.RealCameraWheelSmoke','MenuPointerSmoke','KeyboardFocusSmoke','PointerInputSmoke','dev.mobile.runelite.WidgetHitSmoke']:
+for test in ['TouchIntentSmoke','NotificationSmoke','DeviceRuntimePolicySmoke','dev.mobile.runelite.DirectSurfaceCompositionSmoke','dev.mobile.runelite.GpuFramePoolSmoke','dev.mobile.runelite.SidebarTargetSmoke','dev.mobile.runelite.StretchSizingSmoke','ViewportSmoke','dev.mobile.runelite.SidebarScrollSmoke','HdCompatibilitySmoke','HdProfilesSmoke','StoredLoginSmoke','dev.mobile.runelite.CompositionSmoke','dev.mobile.runelite.RealCameraWheelSmoke','MenuPointerSmoke','KeyboardFocusSmoke','PointerInputSmoke','dev.mobile.runelite.WidgetHitSmoke']:
     print('Checking',test,flush=True)
     subprocess.run([str(JDK/'bin/java'),*options,test],env=env,check=True,timeout=30)
 print('All desktop regression tests passed. Phone testing remains necessary.')

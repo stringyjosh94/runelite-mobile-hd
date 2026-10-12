@@ -30,10 +30,14 @@ Touch gestures become mouse, wheel and keyboard events understood by the desktop
 
 Interface size uses the existing Stretched Mode plugin and clamps enlargement to leave room for game panels. Roomy/Compact under advanced settings changes the logical viewport after reopening. Neither setting is the same as the HD scene-resolution percentage.
 
-The profile policy is shared Java source compiled for Android and the embedded JVM. A selected preset is applied once; later manual edits remain until another preset is selected or a deliberate profile migration occurs. UI-only release v35 retains the v33 profile request identifier.
+The profile policy is shared Java source compiled for Android and the embedded JVM. A selected preset is applied once; later manual edits remain until another preset is selected or a deliberate profile migration occurs. The existing profile migration marker is retained so updates do not reset manual settings.
 
 ## Diagnostics
 
 `GLES direct Surface attached` and `no game readback` indicate direct presentation. `Mobile HD timings` reports CPU wall-time preparation/submission/presentation and optional sparse GPU timestamps. CPU wall time can include waits. GPU timestamps are collected without blocking when supported and discarded after disjoint events. These values are diagnostic samples, not an FPS guarantee.
 
 See [Verification](VERIFICATION.md) for what desktop tests establish and [Device testing](DEVICE-TESTING.md) for checks that require real Android hardware.
+
+## Runtime portability
+
+The native GLES/Surface path is retained across ABI build options. Java runtime assets must match the selected ABI, along with all native JNI dependencies. Packaging verifies CPU types and records a page-size compatibility result. Android startup checks that result before loading the bridge. Android-version fullscreen handling and memory-aware JVM sizing are implemented in MainActivity and DeviceRuntimePolicy. See [Android compatibility](ANDROID-COMPATIBILITY.md).

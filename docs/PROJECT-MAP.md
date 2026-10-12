@@ -5,6 +5,9 @@
 | `app/AndroidManifest.xml` | App version/name/icon, permissions and Android requirements |
 | `app/res/` | Packaged Android icon and resources |
 | `app/src/android/.../MainActivity.java` | Setup, app menus, gestures, keyboard and display mapping |
+| `app/src/android/.../TouchIntent.java` | Device-scaled tap versus drag detection |
+| `app/src/android/.../AndroidNotifications.java` | Android channels, alert polling and delivery |
+| `app/src/host/.../MobileNotifications.java` | RuneLite notification event subscription and queue |
 | `app/src/android/.../GameInterfaceControls.java` | Interface-size and screen-layout dialogs |
 | `app/src/android/.../StoredLogin.java` | Remove the saved login and recovery files |
 | `app/src/android/.../ViewportSizing.java` | Logical viewport size and sidebar magnification |
@@ -32,3 +35,11 @@
 Read [Architecture](ARCHITECTURE.md) before changing graphics or VM integration. Do not modify vendored third-party code just to match this repository's documentation style. Its own notices and build instructions are retained.
 
 Most files in this source tree belong to the vendored glslang/SPIRV-Cross compiler sources. They are retained so contributors can rebuild the native translator and preserve upstream notices. The small project-specific entry points are listed above.
+
+## Android compatibility changes
+
+- `app/scripts/compatibility.py`: runtime CPU and ELF alignment validation.
+- `app/src/android/dev/mobile/runelite/DeviceRuntimePolicy.java`: embedded-JVM heap budgeting.
+- `tools/build.py`: ABI selection and optional separately sourced runtime.
+- `tools/test-compatibility.py`: malformed/mismatched runtime checks.
+- [Android compatibility](ANDROID-COMPATIBILITY.md): supported configurations and remaining runtime work.

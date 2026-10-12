@@ -13,6 +13,7 @@ public final class NativeBridge {
     public static native int launch(String nativeDir, String runtimeDir, String home, String log,
                                     String[] options);
     public static native int[] pixels();
+    public static native String notification();
     public static native int[] presentation();
     public static native void surface(android.view.Surface surface);
     public static native String settings(String request);
